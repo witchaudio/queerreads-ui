@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0; /* Black text color */
+  --background-start-rgb: 214, 219, 220; /* Light gray background start */
+  --background-end-rgb: 255, 255, 255; /* White background end */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-end-rgb)) !important; 
+  font-family: 'JetBrainsMono', sans-serif;
+
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap') format('woff2'),
+       url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.button-rainbow-glow:hover {
+  box-shadow: 0 0 15px rgba(204, 169, 44, 0.4),
+              0 0 20px rgba(217, 128, 250, 0.4),
+              0 0 25px rgba(113, 88, 226, 0.4),
+              0 0 30px rgba(80, 227, 194, 0.4),
+              0 0 35px rgba(88, 201, 250, 0.4),
+              0 0 40px rgba(255, 125, 125, 0.4),
+              0 0 45px rgba(255, 144, 104, 0.4);
+  border-color: transparent;
+  background-image: linear-gradient(45deg, #cca92c, #d980fa, #7158e2, #50e3c2, #58c9fa, #ff7d7d, #ff9068);
+  background-size: 300% 300%;
+  animation: moveGradient 4s ease infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
